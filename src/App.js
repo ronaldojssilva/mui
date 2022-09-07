@@ -1,10 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { Button, AppBar, Toolbar, IconButton } from '@material-ui/core';
+import {withStyles} from '@material-ui/core/styles';
+
+const styles={
+  root:{
+    flexgrow:1
+  }
+}
+
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,9 +27,19 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */} 
+      <AppBar position='static'>
+        <Toolbar>
+          <IconButton></IconButton>
+        </Toolbar>
+      </AppBar>
+      <p className='App-intro'>
+        <Button variant="contained" color='primary' >Primary</Button>
+        <Button variant="contained">Without prop colot</Button>
+        </p>
+
     </div>
   );
 }
 
-export default App;
+export default withStyles(styles)( App);
